@@ -86,14 +86,14 @@ const Home = () => {
             onChange={(e) => setTask(e.target.value)}
           />
           <textarea
-            className="bg-polka w-full outline-none border-b-4 border-b-yellow-500 border-dotted focus:border-b-orange-600 transition resize-none mt-5 placeholder:text-neutral-500"
+            className="bg-polka w-full outline-none border-b-4 border-b-yellow-500 border-dotted focus:border-b-orange-600 transition resize-none mt-7 placeholder:text-neutral-500"
             name="description"
             placeholder="Task description..."
             onChange={(e) => setDescription(e.target.value)}
             id=""
             value={description}
             cols="30"
-            rows="2"
+            rows="4"
           ></textarea>
         </div>
         <button
