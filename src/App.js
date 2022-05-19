@@ -3,18 +3,36 @@ import { Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
 import Protected from "./components/Protected";
 import Login from "./components/Login";
-import app from "./firebase";
-import { getAuth } from "firebase/auth";
-
-const auth = getAuth(app);
+import Header from "./components/Header";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
     <main>
+      <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} auth={auth} />
+        <Route
+          path="/"
+          element={
+            <Protected>
+              <Home />
+            </Protected>
+          }
+        />
+        <Route path="/login" element={<Login />} />
       </Routes>
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </main>
   );
 }

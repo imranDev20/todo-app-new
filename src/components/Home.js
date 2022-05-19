@@ -1,16 +1,10 @@
 import React from "react";
 import { FiTrash2 } from "react-icons/fi";
 import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 const Home = () => {
-  const [tasks, setTasks] = useState([
-    // {
-    //   id: 1,
-    //   value: "Buy books",
-    //   description: "Porashuna valo lagena",
-    //   completed: false,
-    // },
-  ]);
+  const [tasks, setTasks] = useState([]);
 
   const TODO_LOCAL_KEY = "react-todo-list-todos";
 
@@ -26,15 +20,17 @@ const Home = () => {
   }, []);
 
   const addToList = () => {
-    const newTask = {
-      id: tasks.length + 1,
-      value: task,
-      description: description,
-      completed: false,
-    };
-    const newTasks = [...tasks, newTask];
-    setTasks(newTasks);
-    localStorage.setItem(TODO_LOCAL_KEY, JSON.stringify(newTasks));
+    if (task !== "" && description !== "") {
+      const newTask = {
+        id: tasks.length + 1,
+        value: task,
+        description: description,
+        completed: false,
+      };
+      const newTasks = [...tasks, newTask];
+      setTasks(newTasks);
+      localStorage.setItem(TODO_LOCAL_KEY, JSON.stringify(newTasks));
+    }
 
     setTask("");
     setDescription("");
@@ -52,6 +48,17 @@ const Home = () => {
         return task;
       })
     );
+
+    toast.success("Task Completed ✌️", {
+      position: "top-right",
+      className: "!font-['Architects_Daughter'] ",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   };
 
   const handleDelete = (id) => {
@@ -127,6 +134,7 @@ const Home = () => {
           </div>
         ))}
       </ul>
+      <button></button>
     </div>
   );
 };
