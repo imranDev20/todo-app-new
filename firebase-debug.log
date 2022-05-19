@@ -1,0 +1,36 @@
+[debug] [2022-05-19T01:57:17.763Z] ----------------------------------------------------------------------
+[debug] [2022-05-19T01:57:17.763Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2022-05-19T01:57:17.764Z] CLI Version:   11.0.0
+[debug] [2022-05-19T01:57:17.764Z] Platform:      darwin
+[debug] [2022-05-19T01:57:17.764Z] Node Version:  v16.13.1
+[debug] [2022-05-19T01:57:17.766Z] Time:          Thu May 19 2022 07:57:17 GMT+0600 (Bangladesh Standard Time)
+[debug] [2022-05-19T01:57:17.766Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-05-19T01:57:17.808Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-05-19T01:57:17.808Z] > authorizing via signed-in user (imrandev20@gmail.com)
+[debug] [2022-05-19T01:57:17.808Z] [iam] checking project todo-app-92776 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-05-19T01:57:17.809Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/todo-app-92776:testIamPermissions [none]
+[debug] [2022-05-19T01:57:17.809Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/todo-app-92776:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-05-19T01:57:19.223Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/todo-app-92776:testIamPermissions 200
+[debug] [2022-05-19T01:57:19.223Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/todo-app-92776:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-05-19T01:57:19.224Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/todo-app-92776 [none]
+[debug] [2022-05-19T01:57:19.786Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/todo-app-92776 200
+[debug] [2022-05-19T01:57:19.786Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/todo-app-92776 {"projectId":"todo-app-92776","projectNumber":"925052259796","displayName":"todo-app","name":"projects/todo-app-92776","resources":{"hostingSite":"todo-app-92776"},"state":"ACTIVE"}
+[info] 
+[info] === Deploying to 'todo-app-92776'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2022-05-19T01:57:19.790Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/todo-app-92776 [none]
+[debug] [2022-05-19T01:57:20.542Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/todo-app-92776 200
+[debug] [2022-05-19T01:57:20.542Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/todo-app-92776 {"projectId":"todo-app-92776","projectNumber":"925052259796","displayName":"todo-app","name":"projects/todo-app-92776","resources":{"hostingSite":"todo-app-92776"},"state":"ACTIVE"}
+[debug] [2022-05-19T01:57:20.546Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/925052259796/sites/todo-app-92776/versions [none]
+[debug] [2022-05-19T01:57:20.546Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/925052259796/sites/todo-app-92776/versions {"config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2022-05-19T01:57:22.489Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/925052259796/sites/todo-app-92776/versions 200
+[debug] [2022-05-19T01:57:22.489Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/925052259796/sites/todo-app-92776/versions {"name":"projects/925052259796/sites/todo-app-92776/versions/385189e3718825c9","status":"CREATED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[todo-app-92776]: beginning deploy... 
+[info] i  hosting[todo-app-92776]: found 14 files in build 
+[debug] [2022-05-19T01:57:22.506Z] [hosting] uploading with 200 concurrency
+[debug] [2022-05-19T01:57:22.610Z] [hosting] hash cache [YnVpbGQ] stored for 14 files
+[debug] [2022-05-19T01:57:22.610Z] [hosting][hash queue][FINAL] {"max":94,"min":8,"avg":15.499999999999998,"active":0,"complete":14,"success":14,"errored":0,"retried":0,"total":14,"elapsed":101}
+[debug] [2022-05-19T01:57:22.610Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/925052259796/sites/todo-app-92776/versions/385189e3718825c9:populateFiles [none]
+[debug] [2022-05-19T01:57:22.610Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/925052259796/sites/todo-app-92776/versions/385189e3718825c9:populateFiles {"files":{"/asset-manifest.json":"f4bdac84304574eca1752bdce17cc1b1faffeea873509aa726392fe702f1efe1","/index.html":"bb640f1bf3f0bbda0638adea178ef6e7c6758e95ef10c69393d28ff2a2427522","/favicon.ico":"b72f7455f00e4e58792d2bca892abb068e2213838c0316d6b7a0d6d16acd1955","/robots.txt":"391d14b3c2f8c9143a27a28c7399585142228d4d1bdbe2c87ac946de411fa9a2","/logo192.png":"caff018b7f1e8fd481eb1c50d75b0ef236bcd5078b1d15c8bb348453fee30293","/manifest.json":"341d52628782f8ac9290bbfc43298afccb47b7cbfcee146ae30cf0f46bc30900","/static/css/main.9f4b713a.css.map":"0f724c499a7a2cccb5bd5ec17f8615e2508355e82654a5a6127d108dbd3c23a9","/logo512.png":"191fc21360b4ccfb1cda11a1efb97f489ed22672ca83f4064316802bbfdd750e","/static/js/787.c3ae4906.chunk.js":"43045f929758e45c36eaefb745808c4305e672a1d2a103354d957b7750166528","/static/js/main.45778c22.js.LICENSE.txt":"2e0317bf47c29fb7d0485a53b66ae8cb58c98d0cbaf239efac64dd310dfdabda","/static/css/main.9f4b713a.css":"a3c6802e743eaf9c89dbb9a906f800efcbf35c6c2b12814dc3f8fedede68e013","/static/js/787.c3ae4906.chunk.js.map":"69f3ae768093a49f50c097fdb7d545b3b036075d99d96ae2473e5538e67d8e2e","/static/js/main.45778c22.js":"41f06ee74aac8fae1b70d19e06076ac3f0dc360b1ac7d27bc4efb21f3f18f123","/static/js/main.45778c22.js.map":"8fabf24d09f8783ce54bf3ea7ad57f3056e982139e7dd7eabb0e3177de622c08"}}
